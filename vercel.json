@@ -2,7 +2,13 @@
   "version": 2,
   "functions": {
     "api/proxy.js": {
-      "runtime": "nodejs16.x" // Or "nodejs18.x" if supported
+      "runtime": "nodejs18.x"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/images/(.*)",
+      "destination": "/api/proxy?path=$1"
+    }
+  ]
 }
